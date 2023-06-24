@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .netflixIntro{
     border: 2px solid red !important;
     display:block;
@@ -20,5 +26,55 @@
             transform: rotate(180deg);
             animation-name: fading-lumieres-box;
         }
+    } 
+}
+
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+}
+
+.tiktokLoading{
+    position: relative;
+    width:50px;
+    height: 50px;
+}
+
+.tiktokLoading::before,
+.tiktokLoading::after
+{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    animation: tiktokLoading 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.tiktokLoading::before{
+    background-color: #50e8f3;
+}
+
+.tiktokLoading::after{
+    background-color: #fc3f9e;
+    animation-delay: 500ms;
+}
+
+@keyframes tiktokLoading{
+    0%, 100%{
+        left:75px;
+    }
+    25%{
+        transform:scale(0.3);
+    }
+    50%{
+        left:0;
+    }
+    75%{
+        transform:scale(1);
     }
 }
